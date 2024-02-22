@@ -1,0 +1,81 @@
+<form autocomplete="off">
+
+  <div class="mb-3 mt-3">
+    <label class="form-label">Nombre</label>
+    <input type="text" class="form-control" placeholder="Nombre del usuario">
+    <span class="form-text text-danger">
+      Debe de ser en formato de nombre y apellido
+    </span>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" placeholder="Email del usuario">
+        <span class="form-text text-danger">
+          mensaje de error del email
+        </span>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input type="text" class="form-control" placeholder="Nombre código del usuario">
+        <span class="form-text text-danger">
+          El username no puede ser Strider
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="mb-3">
+        <label class="form-label">Contraseña</label>
+        <input type="password" class="form-control" placeholder="Password de su cuenta">
+        <span class="form-text text-danger">
+          La contraseña debe de ser mayor de 6 caracteres.
+        </span>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="mb-3">
+        <label class="form-label">Confirmar contraseña</label>
+        <input type="password" class="form-control" placeholder="Confirmar la contraseña">
+        <span class="form-text text-danger">
+          Las contraseñas deben de ser iguales
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-primary float-end" type="submit">
+        Registrarse
+      </button>
+    </div>
+  </div>
+</form>
+
+<span>Form Valid: </span>
+<span>Form Status: </span>
+<span>Form Pending: </span>
+<span>Form errors</span>
+<pre>{{ 'formulario' | json }}</pre>
+
+<span>Nombre</span>
+<pre>{{ 'formulario' | json }}</pre>
+
+<span>Email</span>
+<pre>{{ 'formulario' | json }}</pre>
+
+<span>Username</span>
+<pre>{{ 'formulario' | json }}</pre>
+
+<span>Password</span>
+<pre>{{ 'formulario' | json }}</pre>
+
+<span>Confirmar</span>
+<pre>{{ 'formulario' | json }}</pre>

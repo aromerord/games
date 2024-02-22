@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-md-6">
+      <h3>Lista de Juegos</h3>
+    </div>
+  
+    <div class="col-md-6 text-end">
+      <button type="button" class="btn btn-primary" routerLink="/nuevo-juego">
+        Añadir
+      </button>
+    </div>
+  </div>
+  
+  <table class="table table-striped mt-3">
+    <thead>
+      <tr>
+        <th scope="col" style="width: 35%;">Título</th>
+        <th scope="col">Plataforma</th>
+        <th scope="col">Categoría</th>
+        <th scope="col">Año</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let game of gamesToShow | slice: (page-1) * pageSize : page * pageSize">
+            <td>{{game.title}}</td>
+            <td>{{game.platform}}</td>
+            <td>{{game.category}}</td>
+            <td>{{game.year}}</td>
+            <td>
+               <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modal" (click)="setIdGameToDelete(game.uid)"><i class="fa-solid fa-trash"></i></button>
+               &nbsp;
+               <button type="button" class="btn btn-success btn-sm" routerLink="/editar-juego/{{game.uid}}"><i class="fa-solid fa-pencil"></i></button>
+            </td>
+         </tr>
+    </tbody>
+  </table>
+  <ngb-pagination 
+      *ngIf="gamesToShow && gamesToShow.length > 0"
+      [collectionSize]="gamesToShow.length" 
+      [pageSize]="pageSize"
+      [(page)]="page" aria-label="Default pagination">
+  </ngb-pagination>
+  
+  <app-game-modal [idGame]="idGame" (gameModalEvent)="reloadTable($event)"></app-game-modal>
+  

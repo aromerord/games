@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <h3 class="mb-3" *ngIf="!idGame">Nuevo Juego</h3>
+    <h3 class="mb-3" *ngIf="idGame">Editar Juego</h3>
+    <hr />
+    <form [formGroup]="gameForm">
+      <div class="row">
+        <div class="col-md-6">
+          <label for="title" class="form-label">Título</label>
+          <input type="text" class="form-control" id="title" required formControlName='title' />
+          <span class="form-text text-danger"
+            *ngIf="gameForm.get('title')?.hasError('title') && gameForm.get('title')?.touched">
+            Este campo es obligatorio
+          </span>
+        </div>
+
+        <div class="col-md-6">
+          <label for="category" class="form-label">Categoría</label>
+          <input type="text" class="form-control" id="category" required formControlName='category' />
+          <span class="form-text text-danger"
+            *ngIf="gameForm.get('category')?.hasError('category') && gameForm.get('category')?.touched">
+            Este campo es obligatorio
+          </span>
+        </div>
+
+        <div class="col-md-6 mt-2">
+          <label for="platform" class="form-label">Plataforma</label>
+          <input type="text" class="form-control" id="platform" required formControlName='platform' />
+          <span class="form-text text-danger"
+            *ngIf="gameForm.get('platform')?.hasError('platform') && gameForm.get('platform')?.touched">
+            Este campo es obligatorio
+          </span>
+        </div>
+
+        <div class="col-md-6 mt-2">
+          <label for="year" class="form-label">Año</label>
+          <input type="number" class="form-control" id="year" required formControlName='year' />
+          <span class="form-text text-danger"
+            *ngIf="gameForm.get('year')?.hasError('year') && gameForm.get('year')?.touched">
+            Este campo es obligatorio
+          </span>
+        </div>
+
+        <div class="col-md-12 mt-2">
+          <label for="description" class="form-label">Descripción</label>
+          <div class="form-floating">
+            <textarea class="form-control" placeholder="Biografía" id="description" style="height: 200px"
+              formControlName='description'></textarea>
+          </div>
+        </div>
+
+        <div class="col-12 text-end mt-3 pb-5">
+          <button type="submit" class="btn btn-secondary" routerLink="/libros">
+            Cancelar
+          </button>
+          &nbsp;
+          <button type="submit" class="btn btn-primary" (click)="updateGame()" *ngIf="idGame">Actualizar</button>
+          <button type="submit" class="btn btn-primary" (click)="saveGame()" *ngIf="!idGame">Guardar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-1"></div>
+</div>

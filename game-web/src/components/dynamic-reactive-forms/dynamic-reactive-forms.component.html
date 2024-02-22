@@ -1,0 +1,57 @@
+<form autocomplete="off">
+
+  <div class="mt-3 mb-3">
+    <label class="form-label">Nombre</label>
+    <input class="form-control" placeholder="Nombre de la persona">
+    <span class="form-text text-danger">
+      error message
+    </span>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Agregar</label>
+    <div class="input-group">
+      <input class="form-control" placeholder="Agregar favorito">
+      <button class="btn btn-outline-primary" type="button">
+        Agregar favorito
+      </button>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Favoritos</label>
+    <div class="mb-1">
+      <div class="input-group">
+        <input class="form-control">
+
+        <button class="btn btn-outline-danger" type="button">
+          Eliminar
+        </button>
+      </div>
+      <span class="form-text text-danger">
+        Este campo es requerido
+      </span>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <button type="submit" class="btn btn-primary float-end">
+        <!-- [disabled]="myForm.invalid" -->
+        Guardar
+      </button>
+    </div>
+  </div>
+</form>
+
+
+<span>Valid</span>
+<pre>{{ 'object' | json }}</pre>
+
+<span>Value</span>
+<pre>{{ 'object' | json }}</pre>
+
+<span>Agregar Juego</span>
+<pre>{{ 'object' | json }}</pre>
+<pre>{{ 'object' | json }}</pre>
